@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://bp4wj1xvimfu1"]
+
+[ext_resource type="Texture2D" uid="uid://dq6ep1irh6kuc" path="res://assets/Objects/Chest.png" id="1_lsren"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkd20"]
+atlas = ExtResource("1_lsren")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8gjr"]
+atlas = ExtResource("1_lsren")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlds8"]
+atlas = ExtResource("1_lsren")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p64p"]
+atlas = ExtResource("1_lsren")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_123xo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkd20")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8gjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlds8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p64p")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lyvw"]
+size = Vector2(16, 14)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_123xo")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_6lyvw")

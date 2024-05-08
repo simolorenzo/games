@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://druiaovr1avx5"]
+
+[ext_resource type="Script" path="res://scripts/mechanics/collectable.gd" id="1_hkw1f"]
+[ext_resource type="Resource" uid="uid://bwh6wy8rh8nt8" path="res://inventory/items/axe.tres" id="2_j5o6t"]
+[ext_resource type="Texture2D" uid="uid://b7b4oyy635ta8" path="res://assets/Objects/Basic_tools_and_meterials.png" id="3_hricb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3aasn"]
+
+[node name="Axe" type="Area2D"]
+script = ExtResource("1_hkw1f")
+itemRes = ExtResource("2_j5o6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3aasn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_hricb")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

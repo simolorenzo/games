@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://bwh6wy8rh8nt8"]
+
+[ext_resource type="Script" path="res://inventory/ui/inventory_item.gd" id="1_td6tn"]
+[ext_resource type="Texture2D" uid="uid://b7b4oyy635ta8" path="res://assets/Objects/Basic_tools_and_meterials.png" id="2_is5bg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo4aa"]
+atlas = ExtResource("2_is5bg")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_td6tn")
+name = "Axe"
+texture = SubResource("AtlasTexture_wo4aa")
+maxAmount = 1
