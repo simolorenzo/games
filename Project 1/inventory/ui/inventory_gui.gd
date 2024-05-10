@@ -1,30 +1,35 @@
 extends Control
+## This scripts manages the general overview of the inventory
+## and makes it interactable
 
 signal opened
 signal closed
 
-var isOpen: bool = false
+var isOpen: bool = false ## Tracks if inventory is open or closed
+var itemInHand: ItemStackGui ## Variable to hold the currently grab item
 
 @onready var inventory: Inventory = preload("res://inventory/player_inventory.tres")
 @onready var ItemStackGuiClass = preload("res://scenes/ui/item_stack_gui.tscn")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 
-var itemInHand: ItemStackGui
-
+## Called when the script is loaded the first time
 func _ready():
 	connectSlots()
-	inventory.updated.connect(update)
-	update()
+	inventory.updated.connect(update) ## Connects "update" signal to inventory reference
+	update() ## Updates the inventory GUI at the start
 
+## Connects click events from inventory slots to onSlotClicked function
 func connectSlots():
 	for i in range(slots.size()):
 		var slot = slots[i]
 		slot.index = i
-		var callable = Callable(onSlotClicked)
-		callable = callable.bind(slot)
-		slot.pressed.connect(callable)
+		var callable = Callable(onSlotClicked) ## Create a callable object referencing onSlotClicked function
+		callable = callable.bind(slot) ## Bind the callable to the specific slot for proper context
+		slot.pressed.connect(callable) ## Connect the slot's pressed signal to the callable object
 
+## Updates the UI to reflect the current inventory state
 func update():
+	## Loop through the minimum of inventory slots and UI slots
 	for i in range(min(inventory.slots.size(), slots.size())):
 		var inventorySlot: InventorySlot = inventory.slots[i]
 		
