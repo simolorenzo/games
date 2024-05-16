@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0wgjqiictlft"]
+
+[ext_resource type="Texture2D" uid="uid://b753nynfe382t" path="res://assets/inventory-sprite.png" id="1_06wks"]
+[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory_grid_ex.gd" id="1_qcu5a"]
+[ext_resource type="Texture2D" uid="uid://dkfvlle2ibi28" path="res://assets/Sprite-0001-export.png" id="2_4cprx"]
+[ext_resource type="Resource" uid="uid://co1p0omv0g1h8" path="res://scripts/resources/item_database.tres" id="2_efk2e"]
+[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="3_5ysyw"]
+[ext_resource type="Script" path="res://addons/gloot/core/inventory_grid_stacked.gd" id="3_danvf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hvx2c"]
+texture = ExtResource("2_4cprx")
+
+[node name="InventoryManager" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -164.0
+offset_right = 164.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_06wks")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="CtrlInventoryGridEx" type="Control" parent="NinePatchRect"]
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -160.0
+offset_right = 160.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qcu5a")
+inventory_path = NodePath("InventoryGridStacked")
+field_style = SubResource("StyleBoxTexture_hvx2c")
+
+[node name="InventoryGridStacked" type="Node" parent="NinePatchRect/CtrlInventoryGridEx"]
+script = ExtResource("3_danvf")
+item_protoset = ExtResource("2_efk2e")
+
+[node name="_Node_21322" type="Node" parent="NinePatchRect/CtrlInventoryGridEx/InventoryGridStacked"]
+script = ExtResource("3_5ysyw")
+protoset = ExtResource("2_efk2e")
+prototype_id = "3x1_sword_01"
+
+[node name="_Node_21433" type="Node" parent="NinePatchRect/CtrlInventoryGridEx/InventoryGridStacked"]
+script = ExtResource("3_5ysyw")
+protoset = ExtResource("2_efk2e")
+prototype_id = "1x1_health_potion"
+properties = {
+"grid_position": Vector2i(1, 0)
+}
+
+[node name="_Node_23894" type="Node" parent="NinePatchRect/CtrlInventoryGridEx/InventoryGridStacked"]
+script = ExtResource("3_5ysyw")
+protoset = ExtResource("2_efk2e")
+prototype_id = "1x1_health_potion"
+properties = {
+"grid_position": Vector2i(1, 1)
+}
+
+[node name="_Node_24630" type="Node" parent="NinePatchRect/CtrlInventoryGridEx/InventoryGridStacked"]
+script = ExtResource("3_5ysyw")
+protoset = ExtResource("2_efk2e")
+prototype_id = "1x1_health_potion"
+properties = {
+"grid_position": Vector2i(3, 2)
+}
+
+[node name="_Node_24888" type="Node" parent="NinePatchRect/CtrlInventoryGridEx/InventoryGridStacked"]
+script = ExtResource("3_5ysyw")
+protoset = ExtResource("2_efk2e")
+prototype_id = "1x1_health_potion"
+properties = {
+"grid_position": Vector2i(1, 2)
+}
+
+[node name="_Node_25158" type="Node" parent="NinePatchRect/CtrlInventoryGridEx/InventoryGridStacked"]
+script = ExtResource("3_5ysyw")
+protoset = ExtResource("2_efk2e")
+prototype_id = "1x1_health_potion"
+properties = {
+"grid_position": Vector2i(2, 1)
+}

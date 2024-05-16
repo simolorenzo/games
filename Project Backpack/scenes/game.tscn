@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://v3lccmb030no"]
+[gd_scene load_steps=2 format=3 uid="uid://v3lccmb030no"]
+
+[ext_resource type="PackedScene" uid="uid://b0wgjqiictlft" path="res://scenes/ui/inventory.tscn" id="1_641xs"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryManager" parent="CanvasLayer" instance=ExtResource("1_641xs")]

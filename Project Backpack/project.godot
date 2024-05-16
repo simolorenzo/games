@@ -11,5 +11,25 @@ config_version=5
 [application]
 
 config/name="Project Backpack"
+run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/size/initial_position_type=2
+window/size/initial_screen=1
+window/stretch/mode="canvas_items"
+window/stretch/scale=2.0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gloot/plugin.cfg")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

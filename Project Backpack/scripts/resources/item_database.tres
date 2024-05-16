@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ItemProtoset" load_steps=2 format=3 uid="uid://co1p0omv0g1h8"]
+
+[ext_resource type="Script" path="res://addons/gloot/core/item_protoset.gd" id="1_ke2ov"]
+
+[resource]
+script = ExtResource("1_ke2ov")
+json_data = "[
+    {
+        \"id\": \"3x1_sword_01\",
+		\"name\": \"Begginer's Sword\",
+		\"description\": \"The sword that was given to you at the academy.\",
+		\"width\": \"1\",
+		\"height\": \"3\",
+		\"stack_size\": 1,
+		\"positive_rotation\": \"positive\",
+		\"image\": \"res://assets/sword-01.png\"
+    },
+    {
+        \"id\": \"1x1_health_potion\",
+		\"name\": \"Health's Potion\",
+		\"description\": \"This heals you.\",
+		\"width\": \"1\",
+		\"height\": \"1\",
+		\"stack_size\": 1,
+		\"max_stack_size\": 10,
+		\"image\": \"res://assets/health-potion.png\"
+    }
+]"

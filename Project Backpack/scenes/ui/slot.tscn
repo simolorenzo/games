@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg4rd7gdxbmyf"]
+
+[ext_resource type="Texture2D" uid="uid://dkfvlle2ibi28" path="res://assets/Sprite-0001-export.png" id="1_m2hec"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpfp7"]
+
+[node name="Slot" type="Panel"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lpfp7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_m2hec")
