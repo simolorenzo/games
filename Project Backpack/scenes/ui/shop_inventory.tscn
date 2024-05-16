@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://ve7gghc2k5kn"]
+
+[ext_resource type="Texture2D" uid="uid://b753nynfe382t" path="res://assets/inventory-sprite.png" id="1_p2to8"]
+[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory_grid_ex.gd" id="2_501f2"]
+[ext_resource type="Texture2D" uid="uid://dkfvlle2ibi28" path="res://assets/Sprite-0001-export.png" id="3_bi3vm"]
+[ext_resource type="Script" path="res://addons/gloot/core/inventory_grid_stacked.gd" id="4_x1hng"]
+[ext_resource type="Resource" uid="uid://co1p0omv0g1h8" path="res://scripts/resources/item_database.tres" id="5_hqvyb"]
+[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="6_w5jhl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6spn"]
+texture = ExtResource("1_p2to8")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hvx2c"]
+texture = ExtResource("3_bi3vm")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_corpd"]
+bg_color = Color(0.912971, 0.439192, 0.334221, 0.376471)
+
+[node name="InventoryManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.0
+offset_top = -166.0
+offset_right = 166.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_y6spn")
+
+[node name="CtrlInventoryGridEx" type="Control" parent="Background"]
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 2
+script = ExtResource("2_501f2")
+inventory_path = NodePath("InventoryGridStacked")
+select_mode = 1
+field_style = SubResource("StyleBoxTexture_hvx2c")
+selection_style = SubResource("StyleBoxFlat_corpd")
+
+[node name="InventoryGridStacked" type="Node" parent="Background/CtrlInventoryGridEx"]
+script = ExtResource("4_x1hng")
+item_protoset = ExtResource("5_hqvyb")
+
+[node name="_Node_21322" type="Node" parent="Background/CtrlInventoryGridEx/InventoryGridStacked"]
+script = ExtResource("6_w5jhl")
+protoset = ExtResource("5_hqvyb")
+prototype_id = "3x1_sword_01"
+
+[node name="_Node_21433" type="Node" parent="Background/CtrlInventoryGridEx/InventoryGridStacked"]
+script = ExtResource("6_w5jhl")
+protoset = ExtResource("5_hqvyb")
+prototype_id = "1x1_health_potion"
+properties = {
+"grid_position": Vector2i(1, 0)
+}
+
+[node name="_Node_23894" type="Node" parent="Background/CtrlInventoryGridEx/InventoryGridStacked"]
+script = ExtResource("6_w5jhl")
+protoset = ExtResource("5_hqvyb")
+prototype_id = "1x1_health_potion"
+properties = {
+"grid_position": Vector2i(1, 1)
+}
+
+[node name="_Node_24888" type="Node" parent="Background/CtrlInventoryGridEx/InventoryGridStacked"]
+script = ExtResource("6_w5jhl")
+protoset = ExtResource("5_hqvyb")
+prototype_id = "1x1_health_potion"
+properties = {
+"grid_position": Vector2i(1, 2)
+}

@@ -1,11 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://v3lccmb030no"]
+[gd_scene load_steps=3 format=3 uid="uid://v3lccmb030no"]
 
-[ext_resource type="PackedScene" uid="uid://b0wgjqiictlft" path="res://scenes/ui/inventory.tscn" id="1_641xs"]
+[ext_resource type="PackedScene" uid="uid://b0wgjqiictlft" path="res://scenes/ui/main_inventory.tscn" id="1_641xs"]
+[ext_resource type="PackedScene" uid="uid://ve7gghc2k5kn" path="res://scenes/ui/shop_inventory.tscn" id="2_xhg3f"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InventoryManager" parent="CanvasLayer" instance=ExtResource("1_641xs")]
+[node name="MultipleInventory" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/MultipleInventory"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MultipleInventory/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 280
+
+[node name="MainInventory" parent="CanvasLayer/MultipleInventory/CenterContainer/HBoxContainer" instance=ExtResource("1_641xs")]
+layout_mode = 2
+
+[node name="ShopInventory" parent="CanvasLayer/MultipleInventory/CenterContainer/HBoxContainer" instance=ExtResource("2_xhg3f")]
+layout_mode = 2
