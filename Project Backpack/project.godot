@@ -27,7 +27,7 @@ window/stretch/scale=2.0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gloot/plugin.cfg")
+enabled=PackedStringArray()
 
 [rendering]
 

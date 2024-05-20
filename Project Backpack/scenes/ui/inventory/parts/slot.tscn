@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvodtnb1alk64"]
+[gd_scene load_steps=2 format=3 uid="uid://cvodtnb1alk64"]
 
 [ext_resource type="Texture2D" uid="uid://dkfvlle2ibi28" path="res://assets/sprites/ui/Sprite-0001-export.png" id="1_tq4ow"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lv7bt"]
-atlas = ExtResource("1_tq4ow")
-region = Rect2(0, 0, 32, 32)
+[node name="Slot" type="PanelContainer"]
+offset_right = 32.0
+offset_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("AtlasTexture_lv7bt")
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("1_tq4ow")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2

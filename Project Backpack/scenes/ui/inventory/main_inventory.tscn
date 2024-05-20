@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://d4ioxi5ytjc75"]
 
-[ext_resource type="Script" path="res://scripts/inventory_manager.gd" id="1_vvcdr"]
+[ext_resource type="Script" path="res://scripts/inventory/ui/inventory_manager.gd" id="1_5tn1y"]
 [ext_resource type="Texture2D" uid="uid://b753nynfe382t" path="res://assets/sprites/ui/inventory-sprite.png" id="2_0dgin"]
-[ext_resource type="Script" path="res://scripts/inventory_grid.gd" id="3_3ecqy"]
+[ext_resource type="Script" path="res://scripts/inventory/ui/inventory_grid.gd" id="3_w64ll"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6spn"]
 texture = ExtResource("2_0dgin")
@@ -14,7 +14,7 @@ texture_margin_bottom = 6.0
 [node name="MainInventory" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_vvcdr")
+script = ExtResource("1_5tn1y")
 
 [node name="Background" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(32, 32)
@@ -37,4 +37,4 @@ layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
-script = ExtResource("3_3ecqy")
+script = ExtResource("3_w64ll")

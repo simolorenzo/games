@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://crw1ukeignnvg"]
+
+[ext_resource type="Texture2D" uid="uid://bfuhsvkflw583" path="res://assets/sprites/icons/health_potion.png" id="1_uca2v"]
+[ext_resource type="Script" path="res://scripts/inventory/data/item.gd" id="2_082xi"]
+
+[resource]
+script = ExtResource("2_082xi")
+display_name = "Health Potion"
+icon = ExtResource("1_uca2v")
+max_stack_size = 5
+size = Vector2(1, 1)
