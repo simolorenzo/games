@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://v3lccmb030no"]
+[gd_scene load_steps=2 format=3 uid="uid://v3lccmb030no"]
 
-[ext_resource type="PackedScene" uid="uid://b0wgjqiictlft" path="res://scenes/ui/main_inventory.tscn" id="1_641xs"]
-[ext_resource type="PackedScene" uid="uid://ve7gghc2k5kn" path="res://scenes/ui/shop_inventory.tscn" id="2_xhg3f"]
+[ext_resource type="PackedScene" uid="uid://d4ioxi5ytjc75" path="res://scenes/ui/inventory/main_inventory.tscn" id="1_slfeq"]
 
 [node name="Game" type="Node2D"]
 
@@ -25,8 +24,19 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 280
 
-[node name="MainInventory" parent="CanvasLayer/MultipleInventory/CenterContainer/HBoxContainer" instance=ExtResource("1_641xs")]
+[node name="MainInventory" parent="CanvasLayer/MultipleInventory/CenterContainer/HBoxContainer" instance=ExtResource("1_slfeq")]
 layout_mode = 2
 
-[node name="ShopInventory" parent="CanvasLayer/MultipleInventory/CenterContainer/HBoxContainer" instance=ExtResource("2_xhg3f")]
-layout_mode = 2
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Next level"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
