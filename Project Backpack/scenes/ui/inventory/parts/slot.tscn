@@ -8,15 +8,6 @@ offset_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
-
-[node name="TextureRect" type="TextureRect" parent="GridContainer"]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
 texture = ExtResource("1_tq4ow")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2

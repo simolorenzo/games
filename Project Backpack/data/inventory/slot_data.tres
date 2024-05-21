@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource("1_2ui1m")
 item_data = ExtResource("1_1cnil")
-quantity = 2
+quantity = 1

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b3j80hrjit2py"]
+
+[ext_resource type="Texture2D" uid="uid://bkg3rfp2xt13f" path="res://assets/sprites/icons/sword_01.png" id="1_tp7b7"]
+[ext_resource type="Script" path="res://scripts/inventory/data/item.gd" id="2_4s7n6"]
+
+[resource]
+script = ExtResource("2_4s7n6")
+display_name = "Sword"
+icon = ExtResource("1_tp7b7")
+max_stack_size = 1
+size = Vector2(1, 3)
